@@ -17,11 +17,14 @@ public class VendorFieldConfiguration {
 	@Bean
 	public VendorFieldValidationHandler vendorFieldValidationHandler() {
 		return (VendorFieldsValidationRequest vendorFieldsValidationRequest) -> {
-			throw new UnsupportedOperationException(String.format(
-					"Vendor Fields Validation Service for editionCode=%s, flowType=%s and operationType=%s is not supported.",
-					vendorFieldsValidationRequest.getEditionCode(),
-					vendorFieldsValidationRequest.getFlowType(),
-					vendorFieldsValidationRequest.getOperationType()));
+			throw new UnsupportedOperationException(
+					String.format(
+							"Vendor Fields Validation Service for editionCode=%s, flowType=%s, operationType=%s, partner=%s and applicationIdentifier=%s is not supported.",
+							vendorFieldsValidationRequest.getEditionCode(),
+							vendorFieldsValidationRequest.getFlowType(),
+							vendorFieldsValidationRequest.getOperationType(),
+							vendorFieldsValidationRequest.getPartner(),
+							vendorFieldsValidationRequest.getApplicationIdentifier()));
 		};
 	}
 }
